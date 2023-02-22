@@ -1,17 +1,27 @@
 package conta;
 
 import java.util.Scanner;
+import conta.model.Conta;
+import conta.util.Cores;
 
 public class Menu {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		Conta c1 = new Conta(1, 123, 1, "Adriana", 1000.0f);
+		c1.visualizar();
+		c1.sacar(1200.f);
+		c1.visualizar();
+		c1.depositar(500.0f);
+		c1.visualizar();
 
 		Scanner sc = new Scanner(System.in);
 
 		int opcao;
 
 		while (true) {
+
+			System.out.println(Cores.TEXT_YELLOW + Cores.ANSI_BLACK_BACKGROUND);
+
 			System.out.println("----------------------------");
 			System.out.println("");
 			System.out.println("         BANCO DA BEA        ");
@@ -30,37 +40,37 @@ public class Menu {
 			System.out.println("----------------------------");
 			System.out.println("\tEntre com a opção desejada: ");
 			System.out.println();
-			System.out.println("            ");
+			System.out.println("             " + Cores.TEXT_RESET);
 			opcao = sc.nextInt();
 
 			switch (opcao) {
 			case 1:
-				System.out.println("    1 -  Criar Conta\n\n");
+				System.out.println(Cores.TEXT_WHITE_BOLD + "    1 -  Criar Conta\n\n");
 				break;
 
 			case 2:
-				System.out.println("    2 - Listar todas as Contas/n/n");
+				System.out.println(Cores.TEXT_WHITE_BOLD + "    2 - Listar todas as Contas/n/n");
 				break;
 			case 3:
-				System.out.println("    3 - Buscar Conta por Número/n/n ");
+				System.out.println(Cores.TEXT_WHITE_BOLD + "    3 - Buscar Conta por Número/n/n ");
 				break;
 			case 4:
-				System.out.println("    4 - Atualizar Dados da Conta/n/n ");
+				System.out.println(Cores.TEXT_WHITE_BOLD + "    4 - Atualizar Dados da Conta/n/n ");
 				break;
 			case 5:
-				System.out.println("    5 - Apagar Conta\n\n");
+				System.out.println(Cores.TEXT_WHITE_BOLD + "    5 - Apagar Conta\n\n");
 				break;
 			case 6:
-				System.out.println("    6 - Sacar\n\n");
+				System.out.println(Cores.TEXT_WHITE_BOLD + "    6 - Sacar\n\n");
 				break;
 			case 7:
-				System.out.println("    7 - Depositar\n\n");
+				System.out.println(Cores.TEXT_WHITE_BOLD + "    7 - Depositar\n\n");
 				break;
 			case 8:
-				System.out.println("    8 - Transferir Valores Entre Contas\n\n");
+				System.out.println(Cores.TEXT_WHITE_BOLD + "    8 - Transferir Valores Entre Contas\n\n");
 				break;
 			case 9:
-				System.out.println("\nBanco Bea -- O Seu Futuro Começa Aqui!");
+				System.out.println(Cores.TEXT_WHITE_BOLD + "\nBanco Bea -- O Seu Futuro Começa Aqui!");
 				sc.close();
 				System.exit(0);
 				break;
@@ -68,7 +78,7 @@ public class Menu {
 				System.out.println("Opção Invalida!");
 				break;
 
-			} // fim switch 
+			} // fim switch
 
 		} // fim while
 	} // fim
